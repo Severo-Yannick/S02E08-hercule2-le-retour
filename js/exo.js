@@ -7,5 +7,12 @@ const hercule = {
   arm: 60.5,
   inRelationship: true,
 }
-// La méthode fillProfil est dans l'objet base qui est dans base.js
+// Afficher le profil d'Hercule
 base.fillProfil(hercule);
+
+// Les amis d'Hercule
+const herculeFriends = ['Jupiter', 'Junon', 'Alcmène', 'Déjanire'];
+// Faire apparaître la liste des amis
+base.printFriends(herculeFriends);
+// Afficher le meilleur ami d'Hercule
+base.setBestFriend(herculeFriends[0]);
