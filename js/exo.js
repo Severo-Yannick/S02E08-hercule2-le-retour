@@ -46,7 +46,18 @@ if (currentHour > 20 || currentHour < 8) {
 // Générer un pseudo
 const generatePseudo = (name, departement) => {
   return `${name}-du-${departement}`;
-}
+};
 // Passe la valeur pseudo dans l'élement id profil-name
-let pseudo  = generatePseudo(hercule.name, hercule.department);
-document.querySelector('#profil-name').innerHTML = pseudo;
+let pseudo = generatePseudo(hercule.name, hercule.department);
+document.querySelector("#profil-name").innerHTML = pseudo;
+
+// Faire fonctionner le menu en haut à gauche
+document.querySelector("#menu-toggler").addEventListener("click", () => {
+  const headerBanner = document.querySelector("#header-banner");
+  const bannerClass = "banner--open";
+  if (headerBanner.classList.contains(bannerClass)) {
+    headerBanner.classList.remove(bannerClass);
+  } else {
+    headerBanner.classList.add(bannerClass);
+  }
+});
