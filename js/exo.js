@@ -61,3 +61,11 @@ document.querySelector("#menu-toggler").addEventListener("click", () => {
     headerBanner.classList.add(bannerClass);
   }
 });
+
+// Réaction à la soumission du formulaire de contact en haut à droite
+let form = document.querySelector('#contact').addEventListener('submit', (event) => {
+  event.preventDefault();
+  // Nettoyage de l'input text après le submit du formulaire
+  event.target.elements["message"].value = "";
+  alert('Hercule ne souhaite pas être dérangé');
+});
