@@ -42,3 +42,11 @@ if (currentHour > 20 || currentHour < 8) {
 } else {
   disponibility.innerHTML = "Disponible";
 }
+
+// Générer un pseudo
+const generatePseudo = (name, departement) => {
+  return `${name}-du-${departement}`;
+}
+// Passe la valeur pseudo dans l'élement id profil-name
+let pseudo  = generatePseudo(hercule.name, hercule.department);
+document.querySelector('#profil-name').innerHTML = pseudo;
