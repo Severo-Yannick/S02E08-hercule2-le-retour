@@ -16,3 +16,10 @@ const herculeFriends = ['Jupiter', 'Junon', 'Alcmène', 'Déjanire'];
 base.printFriends(herculeFriends);
 // Afficher le meilleur ami d'Hercule
 base.setBestFriend(herculeFriends[0]);
+
+
+// Ajout du titre manquant
+let missingTitle = document.createElement('h1');
+missingTitle.classList.add('banner__title');
+missingTitle.innerHTML = 'Vous consultez le profil de Hercule'
+document.querySelector('#header-banner').appendChild(missingTitle);
