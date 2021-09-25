@@ -69,3 +69,14 @@ let form = document.querySelector('#contact').addEventListener('submit', (event)
   event.target.elements["message"].value = "";
   alert('Hercule ne souhaite pas être dérangé');
 });
+
+// Affichage du pourcentage de votes pour Hercule et César
+let votesHerculeAbs = base.vote.hercule;
+let votesCesarAbs = base.vote.cesar;
+let votesTotal = votesHerculeAbs + votesCesarAbs;
+let votesHerculeRel = Math.round(votesHerculeAbs / votesTotal * 100);
+let votesCesarRel = Math.round(votesCesarAbs / votesTotal * 100);
+document.querySelector('#trends-hercule .people__popularity').innerHTML = `${votesHerculeRel}%`;
+document.querySelector('#trends-hercule .people__bar').style.width = `${votesHerculeRel}%`;
+document.querySelector('#trends-cesar .people__popularity').innerHTML = `${votesCesarRel}%`;
+document.querySelector('#trends-cesar .people__bar').style.width = `${votesCesarRel}%`;
