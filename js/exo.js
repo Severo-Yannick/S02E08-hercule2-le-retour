@@ -75,6 +75,20 @@ const program = {
     document.querySelector('#trends-cesar .people__popularity').innerHTML = `${votesCesarRel}%`;
     document.querySelector('#trends-cesar .people__bar').style.width = `${votesCesarRel}%`;
   },
+  // Afficher les tâches d'Hercule qui sont terminées
+  displayActivities() {
+    const herculeActivities = document.querySelector('#activities');
+    herculeActivities.classList.remove('hidden');
+    
+    for(const activity of base.activities) {
+      if(activity.author === 'Hercule' && activity.finished === true) {
+        let finishActivity = document.createElement('li');
+        finishActivity.innerHTML = activity.title;
+        document.querySelector('#activities .tasks').appendChild(finishActivity); 
+      }
+    }
+  },
+  // Execution de toutes fonctions
   runTests () {
     // Afficher le profil d'Hercule
     base.fillProfil(program.hercule);
@@ -89,6 +103,7 @@ const program = {
     program.displayHerculePseudo();
     program.eventListener();
     program.displayVotes();
+    program.displayActivities();
   },
 }
 
